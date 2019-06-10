@@ -7,7 +7,6 @@
         <br>
         <v-layout row wrap>                
             <v-flex text-xs-center wrap xs6>
-                
                 <v-flex 
                     v-for="(card, index) in projectCards"
                     :key="index"
@@ -40,35 +39,20 @@
                 
             </v-flex>
             <v-flex text-xs-center wrap xs6>
-                <v-flex 
-                    v-for="(card, index) in projectCards"
-                    :key="index"
-                >
-                    <v-card
-                        hover
-                        v-ripple
-                    >
-                        <v-card-title                             
-                            class="justify-space-between" 
-                        >        
-                        <h2 class="display-1 black--text font-weight-light">{{ card.title }}</h2>
-                        <div>                           
-                            <img 
-                                v-for="(icon, i) in card.iconsTools"
-                                :key="i"                                
-                                :src="icon"
-                                style="margin-left: 10px"
-                                height="32"
-                                width="32"
-                            />                          
-                        </div>                        
-                        </v-card-title>
-                        <v-img
-                            :src="card.img"
-                        ></v-img>                   
-                    </v-card>
-                    <br>
-                </v-flex>
+                <v-card>
+                    <v-container>
+                        <v-layout>
+                            <v-flex>
+                                <h1>{{ projectCards[0].title }}</h1>
+                                <br>
+                                <v-divider></v-divider>
+                                <br>
+                                <p>{{ projectCards[0].description }}</p>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+                                       
+                </v-card>
                 
             </v-flex>
         </v-layout>
