@@ -45,8 +45,6 @@ import AboutMe from './components/AboutMe'
 export default {
   name: 'App',
   components: {
-    Interests,
-    AboutMe
   },
   data () {
     return {
