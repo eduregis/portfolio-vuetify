@@ -5,21 +5,29 @@
         <span>Eduardo Regis </span>        
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-layout style="margin-top: 10px" justify-center class="mb-2">          
-        <v-btn class="menu-btn" flat>          
-          <router-link :to="{ name: 'AboutMe' }"><a>Sobre Mim</a></router-link> 
-        </v-btn>
-        <v-btn class="menu-btn" flat>          
-          <router-link :to="{ name: 'Projects' }"><a>Projetos</a></router-link> 
-        </v-btn>
-        <v-btn class="menu-btn" flat>          
-          <router-link :to="{ name: 'Interests' }"><a>Áreas de Interesse</a></router-link> 
-        </v-btn>
+      <v-layout style="margin-top: 10px" justify-center class="mb-2"> 
+        <router-link :to="{ name: 'AboutMe' }">         
+          <v-btn class="menu-btn" flat>          
+            <a>Sobre Mim</a>
+          </v-btn>
+        </router-link> 
+        <router-link :to="{ name: 'Projects' }">
+          <v-btn class="menu-btn" flat>          
+            <a>Projetos</a>
+          </v-btn>
+        </router-link> 
+        <router-link :to="{ name: 'Interests' }">
+          <v-btn class="menu-btn" flat>          
+            <a>Áreas de Interesse</a>
+          </v-btn>
+        </router-link> 
       </v-layout>  
       <v-spacer></v-spacer>
-      <v-btn class="menu-btn" flat>          
-          <router-link :to="{ name: 'Contact' }"><a>Entre em Contato!</a></router-link> 
+      <router-link :to="{ name: 'Contact' }">
+        <v-btn class="menu-btn" flat>          
+          <a>Entre em Contato!</a>
         </v-btn>
+      </router-link> 
     </v-toolbar>
     <v-content>
       <transition name="slide" mode="out-in">

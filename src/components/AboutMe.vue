@@ -22,7 +22,7 @@
                         </template>                        
                         <v-card>
                             <v-card-title :class="item.color">                            
-                                <h2 class="white--text font-weight-light">{{ item.title }}</h2>
+                                <h2 class="black--text font-weight-light">{{ item.title }}</h2>
                             </v-card-title>
                             <v-container>
                                 <v-layout>
