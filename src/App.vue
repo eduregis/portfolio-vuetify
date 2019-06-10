@@ -1,6 +1,6 @@
 <template>
   <v-app dark align-center>
-    <v-toolbar light color="#fdd835">
+    <v-toolbar fixed light color="#fdd835">
       <v-toolbar-title class="headline text-uppercase">
         <span>Eduardo Regis </span>        
       </v-toolbar-title>
@@ -28,8 +28,9 @@
           <a>Entre em Contato!</a>
         </v-btn>
       </router-link> 
-    </v-toolbar>
+    </v-toolbar>    
     <v-content>
+      <br><br><br>
       <transition name="slide" mode="out-in">
             <router-view></router-view>
         </transition>

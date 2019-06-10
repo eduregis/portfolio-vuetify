@@ -7,8 +7,8 @@
         <br>
         <v-layout row wrap>                
             <v-flex
-                v-for="card in cards"
-                :key="card"
+                v-for="(card, index) in cards"
+                :key="index"
                 xs3
             >
                 <v-card flat hover v-ripple>
