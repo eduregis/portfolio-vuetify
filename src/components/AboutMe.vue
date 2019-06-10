@@ -18,7 +18,7 @@
           <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsa odit ut nesciunt voluptate ea nobis exercitationem! Quae deserunt, dolorum, obcaecati ea natus dicta facere earum magni illo animi veniam!</h4>
         </v-flex>
       </v-flex>
-        <v-flex xs6>
+        <v-flex xs6 v-scroll>
           <v-timeline>
             <v-timeline-item
               v-for="(item, index) in items"
@@ -65,14 +65,14 @@
           year: '2014 - 2017'
         },
         {
-          color: 'green lighten-1',
+          color: 'blue lighten-1',
           title: 'Ensino Superior',
           description: 'Me transferi para o Curso de Bacharelado em Sistemas e Mídias Digitais pela Universidade Federal do Ceará (UFC).',
           year: '2017 - '
         },
         {
-          color: 'blue lighten-1',
-          title: 'Estágio',
+          color: 'green lighten-1',
+          title: 'Bolsa',
           description: 'Entrei para o Laboratório de Mídias Educacionais (LME).',
           year: '2019'
         }

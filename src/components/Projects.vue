@@ -5,12 +5,103 @@
         <br>
         <v-divider class="amber lighten-1"></v-divider>
         <br>
+        <v-layout row wrap>                
+            <v-flex text-xs-center wrap xs6>
+                
+                <v-flex 
+                    v-for="(card, index) in projectCards"
+                    :key="index"
+                >
+                    <v-card
+                        hover
+                        v-ripple
+                    >
+                        <v-card-title                             
+                            class="justify-space-between" 
+                        >        
+                        <h2 class="display-1 black--text font-weight-light">{{ card.title }}</h2>
+                        <div>                           
+                            <img 
+                                v-for="(icon, i) in card.iconsTools"
+                                :key="i"                                
+                                :src="icon"
+                                style="margin-left: 10px"
+                                height="32"
+                                width="32"
+                            />                          
+                        </div>                        
+                        </v-card-title>
+                        <v-img
+                            :src="card.img"
+                        ></v-img>                   
+                    </v-card>
+                    <br>
+                </v-flex>
+                
+            </v-flex>
+            <v-flex text-xs-center wrap xs6>
+                <v-flex 
+                    v-for="(card, index) in projectCards"
+                    :key="index"
+                >
+                    <v-card
+                        hover
+                        v-ripple
+                    >
+                        <v-card-title                             
+                            class="justify-space-between" 
+                        >        
+                        <h2 class="display-1 black--text font-weight-light">{{ card.title }}</h2>
+                        <div>                           
+                            <img 
+                                v-for="(icon, i) in card.iconsTools"
+                                :key="i"                                
+                                :src="icon"
+                                style="margin-left: 10px"
+                                height="32"
+                                width="32"
+                            />                          
+                        </div>                        
+                        </v-card-title>
+                        <v-img
+                            :src="card.img"
+                        ></v-img>                   
+                    </v-card>
+                    <br>
+                </v-flex>
+                
+            </v-flex>
+        </v-layout>
     </v-container>
+    
 </template>
 
 <script>
 export default {
-    
+    data(){
+        return {
+            projectCards: [
+                {   
+                    title: 'Planeta RGB',                    
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, illum molestiae! Deleniti quaerat nulla numquam iure facilis accusamus accusantium, obcaecati, animi minus velit autem, iste vero molestiae veniam commodi alias.',
+                    img: require('@/assets/projects-images/gamemaker_image.png'),
+                    iconsTools: [
+                        require('@/assets/interests-icons/angular.png'),
+                        require('@/assets/interests-icons/cpp.png')
+                    ]
+                },
+                {   
+                    title: 'B.E.E.P.',
+                    description: 'sadasdsaudadguads',
+                    img: require('@/assets/projects-images/beep_image.png'),
+                    iconsTools: [
+                        require('@/assets/interests-icons/angular.png'),
+                        require('@/assets/interests-icons/cpp.png')
+                    ]
+                }
+            ]            
+        }
+    } 
 }
 </script>
 

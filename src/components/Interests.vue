@@ -7,7 +7,7 @@
         <br>
         <v-layout row wrap>                
             <v-flex
-                v-for="(card, index) in cards"
+                v-for="(card, index) in interestCards"
                 :key="index"
                 xs3
             >
@@ -40,7 +40,7 @@
   export default {
     data () {
         return {
-            cards: [
+            interestCards: [
                 { 
                     title: 'HTML', 
                     img: require('../assets/interests-icons/html-5.png'),
@@ -57,25 +57,25 @@
                     title: 'Vue', 
                     img: require('../assets/interests-icons/vue.png'),
                     description: 'Vue é um framework progressivo para a construção de interfaces de usuário. Ao contrário de outros frameworks monolíticos, Vue foi projetado desde sua concepção para ser adotável incrementalmente.',
-                    color:"green lighten-1"
+                    color:"blue lighten-1"
                 },                 
                 { 
                     title: 'Java', 
                     img: require('../assets/interests-icons/java.png'),
                     description: 'Java é uma linguagem de programação orientada a objetos (comportamento dos objetos determinados por classes) lançada pela primeira vez pela Sun Microsystems em 1995. Possui sintaxe parecida com C++.',
-                    color:"blue lighten-1"
+                    color:"green lighten-1"
                 },
                 { 
                     title: 'Angular', 
                     img: require('../assets/interests-icons/angular.png'),
                     description: 'Angular é uma plataforma de aplicações web de código-fonte aberto e front-end baseado em TypeScript liderado pela Equipe Angular do Google e por uma comunidade de indivíduos e corporações.',
-                    color:"green lighten-1"
+                    color:"red lighten-1"
                 }, 
                 { 
                     title: 'Javascript', 
                     img: require('../assets/interests-icons/javascript.png'),
                     description: 'JavaScript é uma linguagem de programação baseada em scripts, criado para aplicações web e padronizada pela ECMA International (associação especializada na padronização de sistemas de informação).',
-                    color:"red lighten-1"
+                    color:"pink lighten-2"
                 },  
                 { 
                     title: 'C++', 
@@ -87,7 +87,7 @@
                     title: 'Illustrator', 
                     img: require('../assets/interests-icons/illustrator.png'),  
                     description: 'Adobe Illustrator é um editor de imagens vetoriais. Foi criado inicialmente como complemento comercial de software de fontes da Adobe e da tecnologia PostScript desenvolvida pela empresa.',
-                    color:"pink lighten-2"
+                    color:"green lighten-1"
                 },
                 { 
                     title: 'CSS', 
@@ -99,7 +99,7 @@
                     title: 'SQL', 
                     img: require('../assets/interests-icons/database.png'), 
                     description: 'SQL é a linguagem de pesquisa declarativa padrão para banco de dados relacional (base de dados relacional). Muitas das características originais do SQL foram inspiradas na álgebra relacional.',
-                    color:"blue lighten-1"
+                    color:"pink lighten-2"
                 }, 
             ]
         }
