@@ -13,7 +13,7 @@
           Projetos          
         </v-btn>
         <v-btn flat>
-          Interesses          
+          Áreas de Interesse          
         </v-btn>        
       </v-layout>  
       <v-spacer></v-spacer>
@@ -22,18 +22,21 @@
       </v-btn>
     </v-toolbar>
     <v-content>
-      <Interests/>
+      <!-- <Interests/> -->
+      <AboutMe/>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import Interests from './components/Interests'
+import AboutMe from './components/AboutMe'
 
 export default {
   name: 'App',
   components: {
-    Interests
+    Interests,
+    AboutMe
   },
   data () {
     return {
