@@ -39,8 +39,6 @@
 </template>
 
 <script>
-import Interests from './components/Interests'
-import AboutMe from './components/AboutMe'
 
 export default {
   name: 'App',
