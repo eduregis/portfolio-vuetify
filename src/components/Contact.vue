@@ -14,13 +14,12 @@
                 <v-text-field
                     v-model="name"
                     :rules="nameRules"
-                    label="Name"
+                    label="Nome"
                     required
                 ></v-text-field>
                 <v-text-field
                     v-model="assunto"
-                    :rules="nameRules"
-                    label="Name"
+                    label="Assunto"
                     required
                 ></v-text-field>
                 <v-text-field
@@ -38,20 +37,14 @@
                     color="success"
                     @click="validate"
                     >
-                    Validate
+                    Enviar
                 </v-btn>
                 <v-btn
                     color="error"
                     @click="reset"
                     >
-                    Reset Form
-                </v-btn>
-                <v-btn
-                    color="warning"
-                    @click="resetValidation"
-                    >
-                    Reset Validation
-                </v-btn>
+                    Limpar Campos
+                </v-btn>                
             </v-form>
         </template>
     </v-container>
@@ -66,6 +59,7 @@ export default {
             nameRules: [
                 v => !!v || 'Ei, me diz teu nome aí!'
             ],
+            assunto: '',
             email: '',
             emailRules: [
                 v => !!v || 'Ei, me diz teu email aí!',

@@ -137,8 +137,7 @@ export default {
                     functions: ['Desenvolvedor','Game Designer','Ilustrador'],
                     img: require('@/assets/projects-images/rgb/gamemaker_image.png'),
                     iconsTools: [
-                        require('@/assets/interests-icons/angular.png'),
-                        require('@/assets/interests-icons/cpp.png')
+                        require('@/assets/interests-icons/gamemaker.png')
                     ],
                     color: 'red lighten-1',
                     carouselImages: [
@@ -154,7 +153,7 @@ export default {
                     tags: ['Javascript','Jogo','Trabalho de Faculdade'],
                     description: 'Um malware invadiu o computador e descofigurou todos os robozinhos que o fazia funcionar, ' 
                         + 'todos menos um. B.E.E.P. (Bot de Estudo e Esino de Programação) sobreviveu ao ataque e precisa de '
-                        + 'ajuda pra fazer o sistema voltar ao normal. Tendo BE.E.P. como seu mentor, o jogador irá reprogramar '
+                        + 'ajuda pra fazer o sistema voltar ao normal. Tendo B.E.E.P. como seu mentor, o jogador irá reprogramar '
                         + 'os robozinhos utilizando comandos de "andar", "girar", "atacar", "segurar", "soltar e "apertar". '
                         + 'A proposta do jogo é ensinar conceitos de programação como: Algoritmo, Laços de repetição, condicionais, '
                         + 'funções e recursividade enquanto conta uma história. Conceitos da teoria cognitiva Socio-cultural '
@@ -185,7 +184,8 @@ export default {
                     functions: ['Desenvolvedor Back-end'],
                     img: require('@/assets/projects-images/multimeios_image.png'),
                     iconsTools: [
-                        require('@/assets/interests-icons/angular.png')
+                        require('@/assets/interests-icons/angular.png'),
+                        require('@/assets/interests-icons/firebase.png')
                     ],
                     color: 'blue lighten-1',
                     carouselImages: [],

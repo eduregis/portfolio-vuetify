@@ -1,7 +1,7 @@
 <template>
     <v-container grid-list-md>
         <br>
-            <h1 class="headline text-uppercase " style="color: #fdd855">Áreas de Interesse</h1>
+            <h1 class="headline text-uppercase " style="color: #fdd855">Tecnologias de Interesse</h1>
         <br>
         <v-divider class="amber lighten-1"></v-divider>
         <br>
@@ -95,11 +95,23 @@
                     description: 'CSS é o acrônimo de Cascading Style Sheets que em português seria algo como “folhas de estilo em cascata”. Define como os elementos que compõem uma página, um documento ou aplicação Web serão exibidos.',
                     color:"red lighten-1"
                 },
-                 { 
+                { 
                     title: 'SQL', 
                     img: require('../assets/interests-icons/database.png'), 
                     description: 'SQL é a linguagem de pesquisa declarativa padrão para banco de dados relacional (base de dados relacional). Muitas das características originais do SQL foram inspiradas na álgebra relacional.',
                     color:"pink lighten-2"
+                },
+                { 
+                    title: 'GameMaker', 
+                    img: require('../assets/interests-icons/gamemaker.png'), 
+                    description: 'GameMaker Studio é um motor de jogo proprietário, desenvolvido pela YoYo Games. O motor tem suporte a uma linguagem de script, chamada Game Maker Language, ou GML.',
+                    color:"blue lighten-1"
+                }, 
+                { 
+                    title: 'Firebase', 
+                    img: require('../assets/interests-icons/firebase.png'), 
+                    description: 'Firebase é uma plataforma de desenvolvimento mobile (e web) adquirida pela Google em 2014. Essa ferramenta disponibiliza diversos serviços diferentes que auxiliam no desenvolvimento e gerenciamento de aplicativos.',
+                    color:"green lighten-1"
                 }, 
             ]
         }
