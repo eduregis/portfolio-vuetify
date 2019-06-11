@@ -11,7 +11,7 @@
                 :key="index"
                 xs3
             >
-                <v-card flat hover v-ripple>
+                <v-card flat>
                     <v-card-title                             
                         class="justify-space-between"
                         :class="card.color"                    

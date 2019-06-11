@@ -59,7 +59,7 @@
             >
                 <v-card elevation="24">                    
                     <v-card-title>
-                        <h2 v-if="cardIndex == -1">Clique em um projeto para ver os detalhes</h2>
+                        <h2 v-if="cardIndex == -1">Clique em um projeto para ver os detalhes...</h2>
                         <h2 v-else>{{ projectCards[cardIndex].title }}</h2>
                     </v-card-title>
                     <v-card-content v-if="cardIndex != -1">
@@ -89,7 +89,14 @@
                                     </v-carousel>
                                     <br>   
                                 </div>
-                                <p class="text-sm-left"><b>Minha função: </b>{{ projectCards[cardIndex].function }}</p>                                                                                     
+                                <div class="text-sm-left">
+                                    Minha(s) função(ões): 
+                                    <v-chip 
+                                        v-for="(tag, index) in projectCards[cardIndex].functions"
+                                        :key="index"
+                                    
+                                    >{{ tag }}</v-chip>
+                                </div>                                                                               
                             </v-container> 
                         <v-divider></v-divider> 
                         <v-container align-content-start>
@@ -115,9 +122,19 @@ export default {
             projectCards: [
                 {   
                     title: 'Planeta RGB', 
-                    tags: ['jogo','trabalho de faculdade'],                   
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, illum molestiae! Deleniti quaerat nulla numquam iure facilis accusamus accusantium, obcaecati, animi minus velit autem, iste vero molestiae veniam commodi alias.',
-                    function: 'Desenvolvedor',
+                    tags: ['GameMaker','Jogo','Trabalho de Faculdade'],                   
+                    description: 'A história se passa em um planeta bicromático, sendo um lado azul e outro vermelho. '
+                        + 'Seus habitantes, incapazes de aceitar suas diferenças, vivem em conflito por tanto tempo '
+                        + 'que o planeta desaprendeu o significado da palavra “paz”, bem como as vantagens da convivência '
+                        + 'com o diferente. Neste cenário, o jogador controla Green. Nosso protagonista é uma divergência '
+                        + 'na lógica das cores que forma a identidade visual do planeta RGB (inclusive visualmente), bem como '
+                        + 'um pacifista que rejeita o destino de conflito e violência que se apresenta a frente de qualquer um '
+                        + 'que ali resida. Sendo um advogado pela resolução pacífica dos conflitos, Green colocará à prova suas '
+                        + 'habilidades para sobreviver e transitar em zonas de guerra devastadas pelo conflito, lidando com seus '
+                        + '“inimigos” sem recorrer à violência. Esse jogo foi desenvolvido para o trabalho de Projeto '
+                        + 'Integrado do Primeiro Semestre do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.'		
+		        ,
+                    functions: ['Desenvolvedor','Game Designer','Ilustrador'],
                     img: require('@/assets/projects-images/rgb/gamemaker_image.png'),
                     iconsTools: [
                         require('@/assets/interests-icons/angular.png'),
@@ -134,9 +151,17 @@ export default {
                 },
                 {   
                     title: 'B.E.E.P.',
-                    tags: ['jogo','trabalho de faculdade'],
-                    description: 'sadasdsaudadguads',
-                    function: 'Desenvolvedor',
+                    tags: ['Javascript','Jogo','Trabalho de Faculdade'],
+                    description: 'Um malware invadiu o computador e descofigurou todos os robozinhos que o fazia funcionar, ' 
+                        + 'todos menos um. B.E.E.P. (Bot de Estudo e Esino de Programação) sobreviveu ao ataque e precisa de '
+                        + 'ajuda pra fazer o sistema voltar ao normal. Tendo BE.E.P. como seu mentor, o jogador irá reprogramar '
+                        + 'os robozinhos utilizando comandos de "andar", "girar", "atacar", "segurar", "soltar e "apertar". '
+                        + 'A proposta do jogo é ensinar conceitos de programação como: Algoritmo, Laços de repetição, condicionais, '
+                        + 'funções e recursividade enquanto conta uma história. Conceitos da teoria cognitiva Socio-cultural '
+                        + 'foram utilizadas no desenvolvimento do jogo. Esse jogo foi desenvolvido para o trabalho de Projeto '
+                        + 'Integrado do Segundo Semestre do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.'
+                        ,
+                    functions: ['Desenvolvedor'],
                     img: require('@/assets/projects-images/beep/beep_image.png'),
                     iconsTools: [
                         require('@/assets/interests-icons/javascript.png')
@@ -152,9 +177,12 @@ export default {
                 },
                 {   
                     title: 'Sistema Multimeios',
-                    tags: ['sistema','trabalho de faculdade'],
-                    description: 'sadasdsaudadguads',
-                    function: 'Desenvolvedor',
+                    tags: ['Angular','Firebase','Sistema','Trabalho de Faculdade'],
+                    description: 'Esse sistema gerencia o núcleo Multimeios da EEMTI Telina Barbosa. Este núcleo engloba '
+                        + 'a biblioteca, sala de informática e sala de vídeo da escola. Esse sistema foi desenvolvido para o '
+                        + 'trabalho final da disciplina de Projeto Integrado I do Curso de Sistemas e Mídias Digitais da '
+                        + 'Universidade Federal do Ceará.',
+                    functions: ['Desenvolvedor Back-end'],
                     img: require('@/assets/projects-images/multimeios_image.png'),
                     iconsTools: [
                         require('@/assets/interests-icons/angular.png')
@@ -179,5 +207,3 @@ export default {
         margin-top: -8px;
     }
 </style>
-
-
