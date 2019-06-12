@@ -15,7 +15,7 @@
             height="200"
           ></v-img>
           <h1 style="color: #fdd855">Olá!</h1>
-          <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsa odit ut nesciunt voluptate ea nobis exercitationem! Quae deserunt, dolorum, obcaecati ea natus dicta facere earum magni illo animi veniam!</h4>
+          <h4>{{ about }}</h4>
         </v-flex>
       </v-flex>
         <v-flex xs6 v-scroll>
@@ -51,6 +51,10 @@
 <script>
   export default {
     data: () => ({
+      about: 'Meu nome é Luís Eduardo Regis de Oliveira, tenho 22 anos e trabalho com criação de websites e aplicativos. '
+        + 'Moro em Fortaleza, Ceará. Atualmente sou aluno do curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará. '
+        + 'Também sou bolsista do Laboratório de Mídias Educacionais. '
+        + 'Tenho interesse em desenvolvimento front-end, back-end, design, ilustração e jogos. Dá uma conferida nos meus projetos!',
       items: [
         {
           color: 'red lighten-1',
