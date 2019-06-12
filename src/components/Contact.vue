@@ -12,23 +12,24 @@
                 lazy-validation
             >
                 <v-text-field
-                    v-model="name"
+                    v-model="contact.name"
                     :rules="nameRules"
                     label="Nome"
                     required
                 ></v-text-field>
                 <v-text-field
-                    v-model="assunto"
+                    v-model="contact.subject"
                     label="Assunto"
                     required
                 ></v-text-field>
                 <v-text-field
-                    v-model="email"
+                    v-model="contact.email"
                     :rules="emailRules"
                     label="E-mail"
                     required
                 ></v-text-field>
                 <v-textarea
+                    v-model="contact.message"
                     name="input-7-1"
                     label="Mensagem"
                 ></v-textarea>
@@ -47,6 +48,20 @@
                 </v-btn>                
             </v-form>
         </template>
+        <v-snackbar
+            v-model="snackbar"
+            :color="color"            
+            :timeout="timeout"
+        >
+            Mensagem Entregue!!
+        <v-btn
+            dark
+            flat
+            @click="snackbar = false"
+        >
+            Fechar
+        </v-btn>
+        </v-snackbar>
     </v-container>
 </template>
 
@@ -55,22 +70,35 @@ export default {
     data(){
         return{
             valid: true,
-            name: '',
+            snackbar: false,
+            color: 'green',
+            timeout: 3000,
+            contact: {
+                name: '',
+                subject: '',
+                email: '',
+                message: ''
+            },            
             nameRules: [
                 v => !!v || 'Ei, me diz teu nome aí!'
-            ],
-            assunto: '',
-            email: '',
+            ],            
             emailRules: [
                 v => !!v || 'Ei, me diz teu email aí!',
                 v => /.+@.+/.test(v) || 'Insira um email válido!'
-            ],
+            ]
         }
     },
     methods: {
       validate () {
         if (this.$refs.form.validate()) {
-          this.snackbar = true
+          this.$http.post('https://portfolio-contacts-de61a.firebaseio.com/data.json', this.contact)
+            .then(response => {
+                console.log(response)
+                this.snackbar = true
+            }), error => {
+                console.log(error)
+            }
+
         }
       },
       reset () {

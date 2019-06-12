@@ -132,8 +132,7 @@ export default {
                         + 'que ali resida. Sendo um advogado pela resolução pacífica dos conflitos, Green colocará à prova suas '
                         + 'habilidades para sobreviver e transitar em zonas de guerra devastadas pelo conflito, lidando com seus '
                         + '“inimigos” sem recorrer à violência. Esse jogo foi desenvolvido para o trabalho de Projeto '
-                        + 'Integrado do Primeiro Semestre do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.'		
-		        ,
+                        + 'Integrado do Primeiro Semestre do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.',
                     functions: ['Desenvolvedor','Game Designer','Ilustrador'],
                     img: require('@/assets/projects-images/rgb/gamemaker_image.png'),
                     iconsTools: [

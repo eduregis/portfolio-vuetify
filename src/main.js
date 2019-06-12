@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import './plugins/vuetify'
+import VueResource from 'vue-resource'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import AboutMe from './components/AboutMe.vue'
@@ -8,6 +9,7 @@ import Interests from './components/Interests.vue'
 import Contact from './components/Contact.vue'
 
 Vue.use(VueRouter)
+Vue.use(VueResource)
 Vue.config.productionTip = false
 
 const routes = [
