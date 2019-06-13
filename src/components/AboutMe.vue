@@ -13,11 +13,34 @@
             contain
             height="200"
           ></v-img>
+          <br>
           <h1 style="color: #fdd855">Olá!</h1>
+          <br>
           <h4>{{ about }}</h4>
         </v-flex>      
       </v-layout> 
-      <br><br><br><br>         
+      <br><br><br> 
+      <v-layout text-xs-center justify-center>        
+        <v-flex xs4>
+          <v-divider></v-divider>
+          <br><br><br>
+          <h2 style="color: #fdd855">Redes Sociais</h2>
+          <br>
+          <v-layout>
+            <v-img 
+            v-for="(icon, index) in socialIcons" 
+            :key="index"           
+            :src="icon"
+            class="my-3"
+            contain
+            height="50"
+            ></v-img>
+          </v-layout>
+          <br><br><br>
+          <v-divider></v-divider>          
+        </v-flex>    
+      </v-layout>      
+      <br><br><br>       
       <v-layout justify-center>
         <v-flex xs6>
           <v-timeline>
@@ -56,6 +79,11 @@
         + 'Moro em Fortaleza, Ceará. Atualmente sou aluno do curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará. '
         + 'Também sou bolsista do Laboratório de Mídias Educacionais. '
         + 'Tenho interesse em desenvolvimento front-end, back-end, design, ilustração e jogos. Dá uma conferida nos meus projetos!',
+      socialIcons: [
+        require('@/assets/projects-images/beep/beep_01.png'),
+        require('@/assets/projects-images/beep/beep_02.png'),
+        require('@/assets/projects-images/beep/beep_03.png')
+      ],
       items: [
         {
           color: 'red lighten-1',
