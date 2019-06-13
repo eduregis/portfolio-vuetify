@@ -5,9 +5,8 @@
     <br>
     <v-divider class="amber lighten-1"></v-divider>
     <br>
-    <v-layout row wrap>                
-      <v-flex text-xs-center wrap xs6>
-        <v-flex xs12>
+      <v-layout text-xs-center justify-center>        
+        <v-flex xs8>
           <v-img            
             :src="require('../assets/logo.svg')"
             class="my-3"
@@ -16,9 +15,11 @@
           ></v-img>
           <h1 style="color: #fdd855">Olá!</h1>
           <h4>{{ about }}</h4>
-        </v-flex>
-      </v-flex>
-        <v-flex xs6 v-scroll>
+        </v-flex>      
+      </v-layout> 
+      <br><br><br><br>         
+      <v-layout justify-center>
+        <v-flex xs6>
           <v-timeline>
             <v-timeline-item
               v-for="(item, index) in items"
@@ -44,7 +45,7 @@
           </v-timeline-item>                
         </v-timeline>
       </v-flex>
-    </v-layout>
+    </v-layout>    
   </v-container> 
 </template>
 

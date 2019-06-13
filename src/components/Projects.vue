@@ -56,13 +56,13 @@
                 text-xs-center 
                 wrap 
                 xs5
-            >
+            >            
                 <v-card elevation="24">                    
                     <v-card-title>
                         <h2 v-if="cardIndex == -1">Clique em um projeto para ver os detalhes...</h2>
                         <h2 v-else>{{ projectCards[cardIndex].title }}</h2>
                     </v-card-title>
-                    <v-card-content v-if="cardIndex != -1">
+                    <div v-if="cardIndex != -1">
                         <v-divider></v-divider> 
                             <v-container align-content-start> 
                                 <div class="text-sm-left">
@@ -85,6 +85,7 @@
                                             v-for="(image,i) in projectCards[cardIndex].carouselImages"
                                             :key="i"
                                             :src="image"
+                                            @click="activateLightbox(image)"
                                         ></v-carousel-item>
                                     </v-carousel>
                                     <br>   
@@ -106,18 +107,44 @@
                                 Link
                             </v-btn>  
                         </v-container>                    
-                    </v-card-content>
+                    </div>
                 </v-card>                
             </v-flex>        
-        </v-layout>
-    </v-container>
-    
+        </v-layout>        
+        <v-dialog
+            width="830px"
+            v-model="dialog"            
+        >            
+            <v-card>  
+                <v-card-text>
+                    <img      
+                        width="800px"                  
+                        :src="lightbox"
+                    >
+                </v-card-text>
+
+                <v-divider></v-divider>
+                <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                    color="primary"
+                    flat
+                    @click="dialog = false"
+                >
+                    Fechar
+                </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+    </v-container>    
 </template>
 
 <script>
 export default {
     data(){
         return {
+            lightbox: '',
+            dialog: false,
             cardIndex: -1,
             projectCards: [
                 {   
@@ -196,6 +223,10 @@ export default {
     methods: {
         detailProject(index){
             this.cardIndex = index;
+        },
+        activateLightbox(image){
+            this.lightbox = image;
+            this.dialog = true;
         }
     }
 }
