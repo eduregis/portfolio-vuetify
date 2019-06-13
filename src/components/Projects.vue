@@ -127,7 +127,7 @@
                 <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
-                    color="primary"
+                    color="amber lighten-1"
                     flat
                     @click="dialog = false"
                 >

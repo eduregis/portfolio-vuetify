@@ -59,24 +59,42 @@
       items: [
         {
           color: 'red lighten-1',
+          title: 'Escola',
+          description: 'Fiz da Pré-escola até o 4º ano na Escola Menino Dourado.',
+          year: '1999 - 2005'
+        },
+        {
+          color: 'pink lighten-2',
+          title: 'Ensino Fundamental',
+          description: 'Fiz do 5º até o 9º ano no Colégio Mater Amabilis (CMA).',
+          year: '1999 - 2005'
+        },
+        {
+          color: 'blue lighten-1',
           title: 'Ensino Médio',
           description: 'Me formei no Colégio Lourenço Filho.',
           year: '2011 - 2013'
         },
         {
-          color: 'pink lighten-2',
+          color: 'green lighten-1',
           title: 'Ensino Superior',
           description: 'Ingressei no Curso de Bacharelado em Matemática Industrial pela Universidade Federal do Ceará (UFC).',
           year: '2014 - 2017'
         },
+         {
+          color: 'red lighten-1',
+          title: 'Bolsa',
+          description: 'Trabalhei como Bolsista de TI na Secretaria de Tecnologia da Informação (STI).',
+          year: '2017 - 2018'
+        },
         {
-          color: 'blue lighten-1',
+          color: 'pink lighten-2',
           title: 'Ensino Superior',
           description: 'Me transferi para o Curso de Bacharelado em Sistemas e Mídias Digitais pela Universidade Federal do Ceará (UFC).',
           year: '2017 - '
         },
         {
-          color: 'green lighten-1',
+          color: 'blue lighten-1',
           title: 'Bolsa',
           description: 'Entrei para o Laboratório de Mídias Educacionais (LME).',
           year: '2019'
