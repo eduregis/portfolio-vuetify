@@ -16,7 +16,7 @@
           <br>
           <h1 style="color: #fdd855">Olá!</h1>
           <br>
-          <h4>{{ about }}</h4>
+          <h1 class="headline">{{ about }}</h1>
         </v-flex>      
       </v-layout> 
       <br><br><br> 
