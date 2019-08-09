@@ -11,25 +11,22 @@
                 :key="index"
                 xs3
             >
-                <v-card flat>
-                    <v-card-title                             
-                        class="justify-space-between"
-                        :class="card.color"                    
-                    >        
-                    <h2 class="display-1 black--text font-weight-light">{{ card.title }}</h2>
-                    <img
-                        :src="card.img"
-                        height="32"
-                        width="32"
-                    />
-                    </v-card-title>
-                    <v-container>
-                        <v-layout>
-                            <v-flex>
-                                {{ card.description }}
-                            </v-flex>
-                        </v-layout>
-                    </v-container>
+                <v-card> 
+                    <v-card-actions class="justify-center">
+                        <div class="interest-circle" :class="card.color">
+                            <img
+                                :src="card.img"
+                                height="32"
+                                width="32"
+                            />
+                        </div>                       
+                    </v-card-actions>  
+                    <v-divider></v-divider>
+                    <v-card-actions class="justify-center">
+                        <div class="interest-title">
+                            <h2 class="display-1 light--text font-weight-light">{{ card.title }}</h2>  
+                        </div> 
+                    </v-card-actions>           
                 </v-card>
             </v-flex>
         </v-layout>
@@ -122,9 +119,10 @@
   }
 </script>
 
-<style>
-.interest-card{
-    margin-bottom: 20px;
-    break-inside: avoid-column;
+<style lang="scss">
+.interest-circle {
+    margin: 10px;
+    padding: 20px 20px 15px 20px;
+    border-radius: 50%;  
 }
 </style>

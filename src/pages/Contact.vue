@@ -13,41 +13,43 @@
                     v-model="valid"
                     lazy-validation
                 >
-                        <v-text-field
-                            v-model="contact.name"
-                            :rules="nameRules"
-                            label="Nome"
-                            required
-                        ></v-text-field>
-                        <v-text-field
-                            v-model="contact.subject"
-                            label="Assunto"
-                            required
-                        ></v-text-field>
-                        <v-text-field
-                            v-model="contact.email"
-                            :rules="emailRules"
-                            label="E-mail"
-                            required
-                        ></v-text-field>
-                        <v-textarea
-                            v-model="contact.message"
-                            name="input-7-1"
-                            label="Mensagem"
-                        ></v-textarea>
-                        <v-btn
-                            :disabled="!valid"
-                            color="success"
-                            @click="validate"
-                            >
-                            Enviar
-                        </v-btn>
-                        <v-btn
-                            color="error"
-                            @click="reset"
-                            >
-                            Limpar Campos
-                        </v-btn>                
+                        <v-card style="padding: 10px">
+                            <v-text-field
+                                v-model="contact.name"
+                                :rules="nameRules"
+                                label="Nome"
+                                required
+                            ></v-text-field>
+                            <v-text-field
+                                v-model="contact.subject"
+                                label="Assunto"
+                                required
+                            ></v-text-field>
+                            <v-text-field
+                                v-model="contact.email"
+                                :rules="emailRules"
+                                label="E-mail"
+                                required
+                            ></v-text-field>
+                            <v-textarea
+                                v-model="contact.message"
+                                name="input-7-1"
+                                label="Mensagem"
+                            ></v-textarea>
+                            <v-btn
+                                :disabled="!valid"
+                                color="success"
+                                @click="validate"
+                                >
+                                Enviar
+                            </v-btn>
+                            <v-btn
+                                color="error"
+                                @click="reset"
+                                >
+                                Limpar Campos
+                            </v-btn>  
+                        </v-card>              
                     </v-form>
                 </v-flex>
             </v-layout>
