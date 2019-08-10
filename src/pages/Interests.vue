@@ -10,37 +10,25 @@
             :key="index"
         >
             <h2 class="headline" style="color: #fdd855">{{ category.title }}</h2>
-            <v-layout row wrap>                
-                <v-flex
+            <div>                
+                <div
+                class="d-inline-block"
                     v-for="(card, i) in category.cards"
                     :key="i"
-                    xs3
                 >
-                    <v-card> 
-                        <v-card-actions class="justify-center">
-                            <div class="interest-circle" :class="card.color">
-                                <img
-                                    :src="card.img"
-                                    height="32"
-                                    width="32"
-                                />
-                            </div>                       
-                        </v-card-actions>  
-                        <v-divider></v-divider>
-                        <v-card-actions class="justify-center">
-                            <div class="interest-title">
-                                <h2 class="display-1 light--text font-weight-light">{{ card.title }}</h2>  
-                            </div> 
-                        </v-card-actions>           
-                    </v-card>
-                </v-flex>
-            </v-layout>
+                    <InterestCard :card="card"/>
+                </div>
+            </div>
         </v-container>        
     </v-container> 
 </template>
 
 <script>
+import InterestCard from '../components/InterestCard.vue';
   export default {
+      components: {
+          InterestCard
+      },
     data () {
         return {
             categories: [
@@ -147,10 +135,3 @@
   }
 </script>
 
-<style lang="scss">
-.interest-circle {
-    margin: 10px;
-    padding: 20px 20px 15px 20px;
-    border-radius: 50%;  
-}
-</style>
