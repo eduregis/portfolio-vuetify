@@ -30,7 +30,7 @@
                                         class="justify-space-between" 
                                         :class="card.color"
                                     >        
-                                        <h2 class="black--text font-weight-light">{{ card.title }}</h2>
+                                        <h1 class="light-text font-weight-light">{{ card.title }}</h1>
                                         <div>                           
                                             <img 
                                                 v-for="(icon, i) in card.iconsTools"
@@ -51,11 +51,12 @@
                     </div>               
                 </v-flex> 
                 </v-layout>
-            </v-flex> 
+            </v-flex>             
             <v-flex
+                class="card-detail"
                 text-xs-center 
                 wrap 
-                xs5
+                xs4
             >            
                 <v-card elevation="24">                    
                     <v-card-title>
@@ -148,31 +149,21 @@ export default {
             cardIndex: -1,
             projectCards: [
                 {   
-                    title: 'Planeta RGB', 
-                    tags: ['GameMaker','Jogo','Trabalho de Faculdade'],                   
-                    description: 'A história se passa em um planeta bicromático, sendo um lado azul e outro vermelho. '
-                        + 'Seus habitantes, incapazes de aceitar suas diferenças, vivem em conflito por tanto tempo '
-                        + 'que o planeta desaprendeu o significado da palavra “paz”, bem como as vantagens da convivência '
-                        + 'com o diferente. Neste cenário, o jogador controla Green. Nosso protagonista é uma divergência '
-                        + 'na lógica das cores que forma a identidade visual do planeta RGB (inclusive visualmente), bem como '
-                        + 'um pacifista que rejeita o destino de conflito e violência que se apresenta a frente de qualquer um '
-                        + 'que ali resida. Sendo um advogado pela resolução pacífica dos conflitos, Green colocará à prova suas '
-                        + 'habilidades para sobreviver e transitar em zonas de guerra devastadas pelo conflito, lidando com seus '
-                        + '“inimigos” sem recorrer à violência. Esse jogo foi desenvolvido para o trabalho de Projeto '
-                        + 'Integrado do Primeiro Semestre do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.',
-                    functions: ['Desenvolvedor','Game Designer','Ilustrador'],
-                    img: require('@/assets/projects-images/rgb/gamemaker_image.png'),
+                    title: 'Sistema Multimeios',
+                    tags: ['Angular','Firebase','Sistema','Trabalho de Faculdade'],
+                    description: 'Esse sistema gerencia o núcleo Multimeios da EEMTI Telina Barbosa. Este núcleo engloba '
+                        + 'a biblioteca, sala de informática e sala de vídeo da escola. Esse sistema foi desenvolvido para o '
+                        + 'trabalho final da disciplina de Projeto Integrado I do Curso de Sistemas e Mídias Digitais da '
+                        + 'Universidade Federal do Ceará.',
+                    functions: ['Desenvolvedor Back-end'],
+                    img: require('@/assets/projects-images/multimeios_image.png'),
                     iconsTools: [
-                        require('@/assets/interests-icons/gamemaker.png')
+                        require('@/assets/interests-icons/angular.png'),
+                        require('@/assets/interests-icons/firebase.png')
                     ],
-                    color: 'red lighten-1',
-                    carouselImages: [
-                        require('@/assets/projects-images/rgb/planetargb_01.png'),
-                        require('@/assets/projects-images/rgb/planetargb_02.png'),
-                        require('@/assets/projects-images/rgb/planetargb_03.png'),
-                        require('@/assets/projects-images/rgb/planetargb_04.png')
-                    ],
-                    link: 'https://github.com/eduregis/smd-game-planeta-rgb'
+                    color: 'blue lighten-1',
+                    carouselImages: [],
+                    link: 'https://github.com/eduregis/multimeios'
                 },
                 {   
                     title: 'B.E.E.P.',
@@ -201,22 +192,32 @@ export default {
                     link: 'https://github.com/eduregis/smd-projeto-integrado-2018.1'
                 },
                 {   
-                    title: 'Sistema Multimeios',
-                    tags: ['Angular','Firebase','Sistema','Trabalho de Faculdade'],
-                    description: 'Esse sistema gerencia o núcleo Multimeios da EEMTI Telina Barbosa. Este núcleo engloba '
-                        + 'a biblioteca, sala de informática e sala de vídeo da escola. Esse sistema foi desenvolvido para o '
-                        + 'trabalho final da disciplina de Projeto Integrado I do Curso de Sistemas e Mídias Digitais da '
-                        + 'Universidade Federal do Ceará.',
-                    functions: ['Desenvolvedor Back-end'],
-                    img: require('@/assets/projects-images/multimeios_image.png'),
+                    title: 'Planeta RGB', 
+                    tags: ['GameMaker','Jogo','Trabalho de Faculdade'],                   
+                    description: 'A história se passa em um planeta bicromático, sendo um lado azul e outro vermelho. '
+                        + 'Seus habitantes, incapazes de aceitar suas diferenças, vivem em conflito por tanto tempo '
+                        + 'que o planeta desaprendeu o significado da palavra “paz”, bem como as vantagens da convivência '
+                        + 'com o diferente. Neste cenário, o jogador controla Green. Nosso protagonista é uma divergência '
+                        + 'na lógica das cores que forma a identidade visual do planeta RGB (inclusive visualmente), bem como '
+                        + 'um pacifista que rejeita o destino de conflito e violência que se apresenta a frente de qualquer um '
+                        + 'que ali resida. Sendo um advogado pela resolução pacífica dos conflitos, Green colocará à prova suas '
+                        + 'habilidades para sobreviver e transitar em zonas de guerra devastadas pelo conflito, lidando com seus '
+                        + '“inimigos” sem recorrer à violência. Esse jogo foi desenvolvido para o trabalho de Projeto '
+                        + 'Integrado do Primeiro Semestre do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.',
+                    functions: ['Desenvolvedor','Game Designer','Ilustrador'],
+                    img: require('@/assets/projects-images/rgb/gamemaker_image.png'),
                     iconsTools: [
-                        require('@/assets/interests-icons/angular.png'),
-                        require('@/assets/interests-icons/firebase.png')
+                        require('@/assets/interests-icons/gamemaker.png')
                     ],
-                    color: 'blue lighten-1',
-                    carouselImages: [],
-                    link: 'https://github.com/eduregis/multimeios'
-                }
+                    color: 'red lighten-1',
+                    carouselImages: [
+                        require('@/assets/projects-images/rgb/planetargb_01.png'),
+                        require('@/assets/projects-images/rgb/planetargb_02.png'),
+                        require('@/assets/projects-images/rgb/planetargb_03.png'),
+                        require('@/assets/projects-images/rgb/planetargb_04.png')
+                    ],
+                    link: 'https://github.com/eduregis/smd-game-planeta-rgb'
+                },  
             ]           
         }
     },
@@ -235,5 +236,8 @@ export default {
 <style>
     .second-column{
         margin-top: -8px;
+    }
+    .card-detail{
+        margin: 0 auto 0 auto;
     }
 </style>

@@ -41,6 +41,12 @@ import InterestCard from '../components/InterestCard.vue';
                             description: 'Angular é uma plataforma de aplicações web de código-fonte aberto e front-end baseado em TypeScript liderado pela Equipe Angular do Google e por uma comunidade de indivíduos e corporações.',
                             color:"red lighten-1"
                         },
+                        {
+                            title: 'React', 
+                            img: require('../assets/interests-icons/react.png'),
+                            description: 'O React é uma biblioteca JavaScript de código aberto para criar interfaces de usuário. É mantido pelo Facebook, Instagram e uma comunidade de desenvolvedores individuais e outras empresas.',
+                            color:"blue lighten-2"
+                        },
                         { 
                             title: 'Vue', 
                             img: require('../assets/interests-icons/vue.png'),
