@@ -31,7 +31,7 @@
                                 <v-card                        
                                     hover
                                     v-ripple
-                                    @click="detailProject(index)"
+                                    @click="detailProject(card)"
                                 >
                                     <v-card-title                             
                                         class="justify-space-between" 
@@ -68,7 +68,7 @@
                 <v-card elevation="24">                    
                     <v-card-title>
                         <h2 v-if="cardIndex == -1">Clique em um projeto para ver os detalhes...</h2>
-                        <h2 v-else>{{ selectedProjects[cardIndex].title }}</h2>
+                        <h2 v-else>{{ projectCards[cardIndex].title }}</h2>
                     </v-card-title>
                     <div v-if="cardIndex != -1">
                         <v-divider></v-divider> 
@@ -76,21 +76,21 @@
                                 <div class="text-sm-left">
                                     Tags: 
                                     <v-chip 
-                                        v-for="(tag, index) in selectedProjects[cardIndex].tags"
+                                        v-for="(tag, index) in projectCards[cardIndex].tags"
                                         :key="index"
                                     
                                     >{{ tag }}</v-chip>
                                 </div>
                                 <br>
                                 <v-img
-                                    :src="selectedProjects[cardIndex].img"
+                                    :src="projectCards[cardIndex].img"
                                 ></v-img> 
                                 <br>
-                                <p class="text-sm-left"><b>Descrição: </b>{{ selectedProjects[cardIndex].description }}</p>
-                                <div v-if="selectedProjects[cardIndex].carouselImages.length > 0">
+                                <p class="text-sm-left"><b>Descrição: </b>{{ projectCards[cardIndex].description }}</p>
+                                <div v-if="projectCards[cardIndex].carouselImages.length > 0">
                                     <v-carousel height="200">
                                         <v-carousel-item
-                                            v-for="(image,i) in selectedProjects[cardIndex].carouselImages"
+                                            v-for="(image,i) in projectCards[cardIndex].carouselImages"
                                             :key="i"
                                             :src="image"
                                             class="carousel-item"
@@ -102,7 +102,7 @@
                                 <div class="text-sm-left">
                                     Minha(s) função(ões): 
                                     <v-chip 
-                                        v-for="(tag, index) in selectedProjects[cardIndex].functions"
+                                        v-for="(tag, index) in projectCards[cardIndex].functions"
                                         :key="index"
                                     
                                     >{{ tag }}</v-chip>
@@ -111,7 +111,7 @@
                         <v-divider></v-divider> 
                         <v-container align-content-start>
                             <v-btn light class="amber lighten-1"
-                                :href="selectedProjects[cardIndex].link"
+                                :href="projectCards[cardIndex].link"
                             >
                                 Link
                             </v-btn>  
@@ -291,44 +291,32 @@ export default {
         });
     },    
     methods: {
-        detailProject(index){
-            this.cardIndex = index;
+        detailProject(card){
+            this.cardIndex = this.projectCards.indexOf(card);
         },
         activateLightbox(image){
             this.lightbox = image;
             this.dialog = true;
         },
         activateTag(tag){
-            tag.select = !tag.select;
-            this.selectedProjects = [];
-            let count = 0;
-            this.tags.forEach(tag => {
-                if(tag.select){
-                    count++;                    
-                } 
-            });
-            if (count == 0) {
-                this.projectCards.forEach(project => {
-                    this.selectedProjects.push(project)
-                });                
-            } 
-            this.projectCards.forEach(project => {
-                this.tags.forEach(tag => {
-                    if(tag.select){
-                        project.tags.forEach(element => {
-                           if(element == tag.title){
-                               this.selectedProjects.push(project);
-                           }
-                        });
-                        project.functions.forEach(element => {
-                            if(element == tag.title){
-                                this.selectedProjects.push(project);
-                            }
-                        });
-                    }
-                });                  
+            tag.select = !tag.select;   
+            let allTagsDisabled = true;
+            this.tags.forEach(element => {
+                if(element.select == true ){
+                    allTagsDisabled = false;
+                }
             }); 
-            this.selectedProjects = this.selectedProjects.filter((project, i) => this.selectedProjects.indexOf(project) === i);         
+            if(allTagsDisabled){
+                this.selectedProjects = this.projectCards;
+            } else {
+                this.selectedProjects = this.projectCards.filter((project) => this.checkTag(tag, project));    
+            }
+        },
+        checkTag(tag, project){
+            if((project.tags.indexOf(tag.title) === -1) && (project.functions.indexOf(tag.title) === -1)){                
+                return false;
+            }
+            return true;
         }
     }
 }
