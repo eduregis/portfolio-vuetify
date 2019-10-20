@@ -5,7 +5,14 @@
         <br>
         <v-divider class="amber lighten-1"></v-divider>
         <br>
-        <v-layout row wrap>
+        Tags: 
+            <v-chip 
+                v-for="(tag, index) in tags"
+                :key="index"
+                :class="{primary: tag.select}"
+                @click="activateTag(tag)"
+            >{{ tag.title }}</v-chip>
+        <v-layout row wrap style="margin: 10px">
             <v-flex xs7>
                 <v-layout row wrap>
                     <v-flex 
@@ -17,7 +24,7 @@
                     >   
                         <div :class="{'second-column': j==2}"> 
                         <v-flex 
-                            v-for="(card, index) in projectCards"
+                            v-for="(card, index) in selectedProjects"
                             :key="index"
                         >
                             <div v-if="index%2 == j-1">
@@ -61,7 +68,7 @@
                 <v-card elevation="24">                    
                     <v-card-title>
                         <h2 v-if="cardIndex == -1">Clique em um projeto para ver os detalhes...</h2>
-                        <h2 v-else>{{ projectCards[cardIndex].title }}</h2>
+                        <h2 v-else>{{ selectedProjects[cardIndex].title }}</h2>
                     </v-card-title>
                     <div v-if="cardIndex != -1">
                         <v-divider></v-divider> 
@@ -69,23 +76,24 @@
                                 <div class="text-sm-left">
                                     Tags: 
                                     <v-chip 
-                                        v-for="(tag, index) in projectCards[cardIndex].tags"
+                                        v-for="(tag, index) in selectedProjects[cardIndex].tags"
                                         :key="index"
                                     
                                     >{{ tag }}</v-chip>
                                 </div>
                                 <br>
                                 <v-img
-                                    :src="projectCards[cardIndex].img"
+                                    :src="selectedProjects[cardIndex].img"
                                 ></v-img> 
                                 <br>
-                                <p class="text-sm-left"><b>Descrição: </b>{{ projectCards[cardIndex].description }}</p>
-                                <div v-if="projectCards[cardIndex].carouselImages.length > 0">
+                                <p class="text-sm-left"><b>Descrição: </b>{{ selectedProjects[cardIndex].description }}</p>
+                                <div v-if="selectedProjects[cardIndex].carouselImages.length > 0">
                                     <v-carousel height="200">
                                         <v-carousel-item
-                                            v-for="(image,i) in projectCards[cardIndex].carouselImages"
+                                            v-for="(image,i) in selectedProjects[cardIndex].carouselImages"
                                             :key="i"
                                             :src="image"
+                                            class="carousel-item"
                                             @click="activateLightbox(image)"
                                         ></v-carousel-item>
                                     </v-carousel>
@@ -94,7 +102,7 @@
                                 <div class="text-sm-left">
                                     Minha(s) função(ões): 
                                     <v-chip 
-                                        v-for="(tag, index) in projectCards[cardIndex].functions"
+                                        v-for="(tag, index) in selectedProjects[cardIndex].functions"
                                         :key="index"
                                     
                                     >{{ tag }}</v-chip>
@@ -103,7 +111,7 @@
                         <v-divider></v-divider> 
                         <v-container align-content-start>
                             <v-btn light class="amber lighten-1"
-                                :href="projectCards[cardIndex].link"
+                                :href="selectedProjects[cardIndex].link"
                             >
                                 Link
                             </v-btn>  
@@ -147,15 +155,71 @@ export default {
             lightbox: '',
             dialog: false,
             cardIndex: -1,
-            projectCards: [
+            selectedProjects: [],
+            tags: [
+                {
+                    select: false,
+                    title: 'Jogo'
+                },
+                {
+                    select: false,
+                    title: 'Sistema'
+                },
+                {
+                    select: false,
+                    title: 'Desenvolvedor'
+                },
+                {
+                    select: false,
+                    title: 'Back-end'
+                },
+                {
+                    select: false,
+                    title: 'Front-end'
+                },
+                {
+                    select: false,
+                    title: 'Ilustrador'
+                },
+                {
+                    select: false,
+                    title: 'Game Designer'
+                },
+                {
+                    select: false,
+                    title: 'Trabalho de Faculdade'
+                }                
+            ],
+            projectCards: [    
+                {   
+                    title: 'Egipcia Ecommerce',
+                    tags: ['Sistema','Trabalho de Faculdade'],
+                    description: 'Um sistema de ecommerce desenvolvido utilizando JSP, com interação com banco de dados. '
+                        + 'Esse sistema foi desenvolvido para o trabalho final da disciplina de Programação Web I'
+                        + ' do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.'
+                        ,
+                    functions: ['Desenvolvedor','Front-end','Back-end'],
+                    img: require('@/assets/projects-images/egipcia/egipcia_image.png'),
+                    iconsTools: [
+                        require('@/assets/interests-icons/java.png')
+                    ],
+                    color: 'cyan darken-1',
+                    carouselImages: [
+                        require('@/assets/projects-images/beep/beep_01.png'),
+                        require('@/assets/projects-images/beep/beep_02.png'),
+                        require('@/assets/projects-images/beep/beep_03.png'),
+                        require('@/assets/projects-images/beep/beep_04.png')
+                    ],
+                    link: 'https://github.com/eduregis/smd-projeto-integrado-2018.1'
+                },            
                 {   
                     title: 'Sistema Multimeios',
-                    tags: ['Angular','Firebase','Sistema','Trabalho de Faculdade'],
+                    tags: ['Sistema','Trabalho de Faculdade'],
                     description: 'Esse sistema gerencia o núcleo Multimeios da EEMTI Telina Barbosa. Este núcleo engloba '
                         + 'a biblioteca, sala de informática e sala de vídeo da escola. Esse sistema foi desenvolvido para o '
                         + 'trabalho final da disciplina de Projeto Integrado I do Curso de Sistemas e Mídias Digitais da '
                         + 'Universidade Federal do Ceará.',
-                    functions: ['Desenvolvedor Back-end'],
+                    functions: ['Desenvolvedor','Back-end'],
                     img: require('@/assets/projects-images/multimeios_image.png'),
                     iconsTools: [
                         require('@/assets/interests-icons/angular.png'),
@@ -167,7 +231,7 @@ export default {
                 },
                 {   
                     title: 'B.E.E.P.',
-                    tags: ['Javascript','Jogo','Trabalho de Faculdade'],
+                    tags: ['Jogo','Trabalho de Faculdade'],
                     description: 'Um malware invadiu o computador e descofigurou todos os robozinhos que o fazia funcionar, ' 
                         + 'todos menos um. B.E.E.P. (Bot de Estudo e Esino de Programação) sobreviveu ao ataque e precisa de '
                         + 'ajuda pra fazer o sistema voltar ao normal. Tendo B.E.E.P. como seu mentor, o jogador irá reprogramar '
@@ -182,7 +246,7 @@ export default {
                     iconsTools: [
                         require('@/assets/interests-icons/javascript.png')
                     ],
-                    color: 'pink lighten-2',
+                    color: 'orange darken-2',
                     carouselImages: [
                         require('@/assets/projects-images/beep/beep_01.png'),
                         require('@/assets/projects-images/beep/beep_02.png'),
@@ -193,7 +257,7 @@ export default {
                 },
                 {   
                     title: 'Planeta RGB', 
-                    tags: ['GameMaker','Jogo','Trabalho de Faculdade'],                   
+                    tags: ['Jogo','Trabalho de Faculdade'],                   
                     description: 'A história se passa em um planeta bicromático, sendo um lado azul e outro vermelho. '
                         + 'Seus habitantes, incapazes de aceitar suas diferenças, vivem em conflito por tanto tempo '
                         + 'que o planeta desaprendeu o significado da palavra “paz”, bem como as vantagens da convivência '
@@ -209,7 +273,7 @@ export default {
                     iconsTools: [
                         require('@/assets/interests-icons/gamemaker.png')
                     ],
-                    color: 'red lighten-1',
+                    color: 'light-green darken-1',
                     carouselImages: [
                         require('@/assets/projects-images/rgb/planetargb_01.png'),
                         require('@/assets/projects-images/rgb/planetargb_02.png'),
@@ -221,6 +285,11 @@ export default {
             ]           
         }
     },
+    created () {
+        this.projectCards.forEach(project => {
+            this.selectedProjects.push(project)
+        });
+    },    
     methods: {
         detailProject(index){
             this.cardIndex = index;
@@ -228,6 +297,38 @@ export default {
         activateLightbox(image){
             this.lightbox = image;
             this.dialog = true;
+        },
+        activateTag(tag){
+            tag.select = !tag.select;
+            this.selectedProjects = [];
+            let count = 0;
+            this.tags.forEach(tag => {
+                if(tag.select){
+                    count++;                    
+                } 
+            });
+            if (count == 0) {
+                this.projectCards.forEach(project => {
+                    this.selectedProjects.push(project)
+                });                
+            } 
+            this.projectCards.forEach(project => {
+                this.tags.forEach(tag => {
+                    if(tag.select){
+                        project.tags.forEach(element => {
+                           if(element == tag.title){
+                               this.selectedProjects.push(project);
+                           }
+                        });
+                        project.functions.forEach(element => {
+                            if(element == tag.title){
+                                this.selectedProjects.push(project);
+                            }
+                        });
+                    }
+                });                  
+            }); 
+            this.selectedProjects = this.selectedProjects.filter((project, i) => this.selectedProjects.indexOf(project) === i);         
         }
     }
 }
@@ -239,5 +340,8 @@ export default {
     }
     .card-detail{
         margin: 0 auto 0 auto;
+    }
+    .carousel-item{
+        cursor: pointer;
     }
 </style>

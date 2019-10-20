@@ -40,7 +40,11 @@
           <v-divider></v-divider>          
         </v-flex>    
       </v-layout>      
-      <br><br><br>       
+      <br><br><br>            
+      <v-layout justify-center>
+        <h2 style="color: #fdd855">Linha do tempo</h2>
+         <br><br><br>
+      </v-layout>
       <v-layout justify-center>
         <v-flex xs6>
           <v-timeline>
@@ -75,7 +79,7 @@
 <script>
   export default {
     data: () => ({
-      about: 'Meu nome é Luís Eduardo Regis de Oliveira, tenho 22 anos e trabalho com criação de websites e aplicativos. '
+      about: 'Meu nome é Luís Eduardo Regis de Oliveira, tenho 23 anos e trabalho com criação de websites e aplicativos. '
         + 'Moro em Fortaleza, Ceará. Atualmente sou aluno do curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará. '
         + 'Também sou bolsista do Laboratório de Mídias Educacionais. '
         + 'Tenho interesse em desenvolvimento front-end, back-end, design, ilustração e jogos. Dá uma conferida nos meus projetos!',
