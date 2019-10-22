@@ -9,9 +9,9 @@
             <v-chip 
                 v-for="(tag, index) in tags"
                 :key="index"
-                :class="{primary: tag.select}"
+                :class="{primary: tag == selectedTag}"
                 @click="activateTag(tag)"
-            >{{ tag.title }}</v-chip>
+            >{{ tag }}</v-chip>
         <v-layout row wrap style="margin: 10px">
             <v-flex xs7>
                 <v-layout row wrap>
@@ -125,9 +125,11 @@
             v-model="dialog"            
         >            
             <v-card>  
-                <v-card-text>
+                <v-card-text
+                    class="lightbox-content"
+                >
                     <img      
-                        width="800px"                  
+                        class="lightbox-image"       
                         :src="lightbox"
                     >
                 </v-card-text>
@@ -156,62 +158,18 @@ export default {
             dialog: false,
             cardIndex: -1,
             selectedProjects: [],
+            selectedTag: null,
             tags: [
-                {
-                    select: false,
-                    title: 'Jogo'
-                },
-                {
-                    select: false,
-                    title: 'Sistema'
-                },
-                {
-                    select: false,
-                    title: 'Desenvolvedor'
-                },
-                {
-                    select: false,
-                    title: 'Back-end'
-                },
-                {
-                    select: false,
-                    title: 'Front-end'
-                },
-                {
-                    select: false,
-                    title: 'Ilustrador'
-                },
-                {
-                    select: false,
-                    title: 'Game Designer'
-                },
-                {
-                    select: false,
-                    title: 'Trabalho de Faculdade'
-                }                
+                'Jogo',
+                'Sistema',
+                'Desenvolvedor',
+                'Back-end',
+                'Front-end',
+                'Ilustrador',
+                'Game Designer',
+                'Trabalho de Faculdade'
             ],
-            projectCards: [    
-                {   
-                    title: 'Egipcia Ecommerce',
-                    tags: ['Sistema','Trabalho de Faculdade'],
-                    description: 'Um sistema de ecommerce desenvolvido utilizando JSP, com interação com banco de dados. '
-                        + 'Esse sistema foi desenvolvido para o trabalho final da disciplina de Programação Web I'
-                        + ' do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.'
-                        ,
-                    functions: ['Desenvolvedor','Front-end','Back-end'],
-                    img: require('@/assets/projects-images/egipcia/egipcia_image.png'),
-                    iconsTools: [
-                        require('@/assets/interests-icons/java.png')
-                    ],
-                    color: 'cyan darken-1',
-                    carouselImages: [
-                        require('@/assets/projects-images/beep/beep_01.png'),
-                        require('@/assets/projects-images/beep/beep_02.png'),
-                        require('@/assets/projects-images/beep/beep_03.png'),
-                        require('@/assets/projects-images/beep/beep_04.png')
-                    ],
-                    link: 'https://github.com/eduregis/smd-projeto-integrado-2018.1'
-                },            
+            projectCards: [ 
                 {   
                     title: 'Sistema Multimeios',
                     tags: ['Sistema','Trabalho de Faculdade'],
@@ -255,6 +213,27 @@ export default {
                     ],
                     link: 'https://github.com/eduregis/smd-projeto-integrado-2018.1'
                 },
+                 {   
+                    title: 'Breakout Remake',
+                    tags: ['Jogo','Trabalho de Faculdade'],
+                    description: 'Um remake do clássico jogo de atari Breakout. Feito com o framework Processing '
+                        + 'Esse jogo foi desenvolvido para o trabalho final da disciplina de Matem´tica aplicada à Multimídia I'
+                        + ' do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.'
+                        ,
+                    functions: ['Desenvolvedor','Ilustrador'],
+                    img: require('@/assets/projects-images/breakout_remake/breakout_remake_image.png'),
+                    iconsTools: [
+                        require('@/assets/interests-icons/java.png')
+                    ],
+                    color: 'pink darken-1',
+                    carouselImages: [
+                        require('@/assets/projects-images/breakout_remake/breakout_remake_01.png'),
+                        require('@/assets/projects-images/breakout_remake/breakout_remake_02.png'),
+                        require('@/assets/projects-images/breakout_remake/breakout_remake_03.png'),
+                        require('@/assets/projects-images/breakout_remake/breakout_remake_04.png')
+                    ],
+                    link: 'https://drive.google.com/file/d/1pgn1oRAIitkk32xheU2G57y_E9rOHMop/view'
+                },    
                 {   
                     title: 'Planeta RGB', 
                     tags: ['Jogo','Trabalho de Faculdade'],                   
@@ -299,21 +278,16 @@ export default {
             this.dialog = true;
         },
         activateTag(tag){
-            tag.select = !tag.select;   
-            let allTagsDisabled = true;
-            this.tags.forEach(element => {
-                if(element.select == true ){
-                    allTagsDisabled = false;
-                }
-            }); 
-            if(allTagsDisabled){
+            if(this.selectedTag == tag){
+                this.selectedTag = null;
                 this.selectedProjects = this.projectCards;
-            } else {
-                this.selectedProjects = this.projectCards.filter((project) => this.checkTag(tag, project));    
+            }else {
+                this.selectedTag = tag;
+                this.selectedProjects = this.projectCards.filter((project) => this.checkTag(this.selectedTag, project)); 
             }
         },
         checkTag(tag, project){
-            if((project.tags.indexOf(tag.title) === -1) && (project.functions.indexOf(tag.title) === -1)){                
+            if((project.tags.indexOf(tag) === -1) && (project.functions.indexOf(tag) === -1)){                
                 return false;
             }
             return true;
@@ -331,5 +305,13 @@ export default {
     }
     .carousel-item{
         cursor: pointer;
+    }
+    .lightbox-content{
+        display: flex;
+        justify-content: center;
+    }
+    .lightbox-image{
+        max-width: 800px;
+        max-height: 700px;
     }
 </style>
