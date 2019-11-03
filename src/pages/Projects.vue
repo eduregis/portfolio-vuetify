@@ -37,7 +37,7 @@
                                         class="justify-space-between" 
                                         :class="card.color"
                                     >        
-                                        <h1 class="light-text font-weight-light">{{ card.title }}</h1>
+                                        <h1 class="light-text font-weight-light">{{ card.shortTitle }}</h1>
                                         <div>                           
                                             <img 
                                                 v-for="(icon, i) in card.iconsTools"
@@ -172,6 +172,7 @@ export default {
             projectCards: [ 
                 {   
                     title: 'Sistema Multimeios',
+                    shortTitle: 'Sis. Multimeios',
                     tags: ['Sistema','Trabalho de Faculdade'],
                     description: 'Esse sistema gerencia o núcleo Multimeios da EEMTI Telina Barbosa. Este núcleo engloba '
                         + 'a biblioteca, sala de informática e sala de vídeo da escola. Esse sistema foi desenvolvido para o '
@@ -189,6 +190,7 @@ export default {
                 },
                 {   
                     title: 'B.E.E.P.',
+                    shortTitle: 'B.E.E.P.',
                     tags: ['Jogo','Trabalho de Faculdade'],
                     description: 'Um malware invadiu o computador e descofigurou todos os robozinhos que o fazia funcionar, ' 
                         + 'todos menos um. B.E.E.P. (Bot de Estudo e Esino de Programação) sobreviveu ao ataque e precisa de '
@@ -215,6 +217,7 @@ export default {
                 },
                  {   
                     title: 'Breakout Remake',
+                    shortTitle: 'Breakout Remake',
                     tags: ['Jogo','Trabalho de Faculdade'],
                     description: 'Um remake do clássico jogo de atari Breakout. Feito com o framework Processing '
                         + 'Esse jogo foi desenvolvido para o trabalho final da disciplina de Matem´tica aplicada à Multimídia I'
@@ -235,7 +238,8 @@ export default {
                     link: 'https://drive.google.com/file/d/1pgn1oRAIitkk32xheU2G57y_E9rOHMop/view'
                 },    
                 {   
-                    title: 'Planeta RGB', 
+                    title: 'Planeta RGB',
+                    shortTitle: 'Planeta RGB', 
                     tags: ['Jogo','Trabalho de Faculdade'],                   
                     description: 'A história se passa em um planeta bicromático, sendo um lado azul e outro vermelho. '
                         + 'Seus habitantes, incapazes de aceitar suas diferenças, vivem em conflito por tanto tempo '
