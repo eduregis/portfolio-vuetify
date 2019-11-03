@@ -32,12 +32,12 @@
                                     hover
                                     v-ripple
                                     @click="detailProject(card)"
+                                    class="project-card"
                                 >
-                                    <v-card-title                             
-                                        class="justify-space-between" 
-                                        :class="card.color"
-                                    >        
-                                        <h1 class="light-text font-weight-light">{{ card.shortTitle }}</h1>
+                                    <div
+                                        class="project-card-title justify-space-between"
+                                    >
+                                    <h2 class="light-text font-weight-light project-card-header-title"><strong>{{ card.shortTitle }}</strong></h2>
                                         <div>                           
                                             <img 
                                                 v-for="(icon, i) in card.iconsTools"
@@ -47,11 +47,13 @@
                                                 height="32"
                                                 width="32"
                                             />                          
-                                        </div>                        
-                                    </v-card-title>
+                                        </div>
+                                    </div>                  
                                     <v-img
+                                        class="project-card-img"
                                         :src="card.img"
-                                    ></v-img>                   
+                                    >
+                                    </v-img> 
                                 </v-card>
                             </div>                    
                         </v-flex> 
@@ -156,7 +158,7 @@ export default {
         return {
             lightbox: '',
             dialog: false,
-            cardIndex: -1,
+            cardIndex: 0,
             selectedProjects: [],
             selectedTag: null,
             tags: [
@@ -301,6 +303,39 @@ export default {
 </script>
 
 <style>
+    .project-card {
+        position: relative;
+        border-radius: 3px;
+        overflow: hidden;
+        height: 106px;
+    }
+    .project-card-title{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: 0;
+        display: flex;
+        padding: 10px;
+        transition: opacity .5s ease-out;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .project-card-title:hover{
+        opacity: 1;
+    }
+    .project-card-img{
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+    .v-card--reveal {
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    opacity: .5;
+    position: absolute;
+    width: 100%;
+    }
     .second-column{
         margin-top: -8px;
     }
