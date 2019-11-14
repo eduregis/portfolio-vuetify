@@ -14,52 +14,25 @@
             >{{ tag }}</v-chip>
         <v-layout row wrap style="margin: 10px">
             <v-flex xs7>
-                <v-layout row wrap>
-                    <v-flex 
-                        v-for="j in 2"
-                        :key="j"
-                        text-xs-center 
-                        wrap 
-                        xs6
-                    >   
-                        <div :class="{'second-column': j==2}"> 
-                        <v-flex 
-                            v-for="(card, index) in selectedProjects"
-                            :key="index"
-                        >
-                            <div v-if="index%2 == j-1">
-                                <v-card                        
-                                    hover
-                                    v-ripple
-                                    @click="detailProject(card)"
-                                    class="project-card"
-                                >
-                                    <div
-                                        class="project-card-title justify-space-between"
-                                    >
-                                    <h2 class="light-text font-weight-light project-card-header-title"><strong>{{ card.shortTitle }}</strong></h2>
-                                        <div>                           
-                                            <img 
-                                                v-for="(icon, i) in card.iconsTools"
-                                                :key="i"                                
-                                                :src="icon"
-                                                style="margin-left: 10px"
-                                                height="32"
-                                                width="32"
-                                            />                          
-                                        </div>
-                                    </div>                  
-                                    <v-img
-                                        class="project-card-img"
-                                        :src="card.img"
-                                    >
-                                    </v-img> 
-                                </v-card>
-                            </div>                    
-                        </v-flex> 
-                    </div>               
-                </v-flex> 
-                </v-layout>
+                <div class="project-cards-container">
+                    <div
+                        v-for="(card, index) in selectedProjects"
+                        :key="index"
+                        class="project-card"
+                    >
+                        <v-card                        
+                            hover
+                            v-ripple
+                            @click="detailProject(card)"
+                        >                                              
+                            <v-img
+                                class="project-card-img"
+                                :src="card.img"
+                            >
+                            </v-img> 
+                        </v-card>
+                    </div> 
+                </div>
             </v-flex>             
             <v-flex
                 class="card-detail"
@@ -303,13 +276,33 @@ export default {
 </script>
 
 <style>
+    .project-cards-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        position: relative;
+    }
     .project-card {
         position: relative;
-        border-radius: 3px;
-        overflow: hidden;
-        height: 106px;
+        margin: 10px;
     }
     .project-card-title{
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: 0;
+        display: flex;
+        padding: 10px;
+        transition: opacity .5s ease-out;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .project-card-title:hover{
+        opacity: 1;
+    }
+    .project-card-img{
+        width: 100%;
+        z-index: 1;
+    }
+    /* .project-card-title{
         position: absolute;
         width: 100%;
         height: 100%;
@@ -327,15 +320,7 @@ export default {
         position: absolute;
         width: 100%;
         z-index: 1;
-    }
-    .v-card--reveal {
-    align-items: center;
-    bottom: 0;
-    justify-content: center;
-    opacity: .5;
-    position: absolute;
-    width: 100%;
-    }
+    } */    
     .second-column{
         margin-top: -8px;
     }
