@@ -146,6 +146,32 @@ export default {
             ],
             projectCards: [ 
                 {   
+                    title: 'Egipcia Ecommerce',
+                    shortTitle: 'Egipcia',
+                    tags: ['Sistema','Trabalho de Faculdade'],
+                    description: 'Esse sistema gerencia o comércio digital fictícia Egipcia. Com o uso de JSPs e Servlets, '
+                        + 'o Ecommerce Egipcia realiza operações de cadastro, listagem, filtragem, alteração e exclusão de '
+                        + 'produtos, categorias, compras e clientes para o administrador, e a realização de compras para '
+                        + 'o cliente. Utiliza cookies para realizar a função do carrinho de compras, podendo ser usado '
+                        + 'mesmo sem estar com uma sessão de usuário. Esse sistema foi desenvolvido para o trabalho final da '
+                        + 'disciplina de Programação Web I do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.',
+                    functions: ['Desenvolvedor','Back-end'],
+                    img: require('@/assets/projects-images/egipcia/egipcia_image.png'),
+                    iconsTools: [
+                        require('@/assets/interests-icons/java.png')
+                    ],
+                    color: 'blue lighten-1',
+                    carouselImages: [
+                        require('@/assets/projects-images/egipcia/egipcia_01.png'),
+                        require('@/assets/projects-images/egipcia/egipcia_02.png'),
+                        require('@/assets/projects-images/egipcia/egipcia_03.png'),
+                        require('@/assets/projects-images/egipcia/egipcia_04.png'),
+                        require('@/assets/projects-images/egipcia/egipcia_05.png'),
+                        require('@/assets/projects-images/egipcia/egipcia_06.png'),
+                    ],
+                    link: 'https://github.com/eduregis/egipcia'
+                },
+                {   
                     title: 'Sistema Multimeios',
                     shortTitle: 'Sis. Multimeios',
                     tags: ['Sistema','Trabalho de Faculdade'],
