@@ -42,8 +42,12 @@
             >            
                 <v-card elevation="24">                    
                     <v-card-title>
-                        <h2 v-if="cardIndex == -1">Clique em um projeto para ver os detalhes...</h2>
-                        <h2 v-else>{{ projectCards[cardIndex].title }}</h2>
+                        <v-row v-if="cardIndex == -1">
+                            <h2 >Clique em um projeto para ver os detalhes...</h2>
+                        </v-row >
+                        <v-row v-else>
+                            <h2>{{ projectCards[cardIndex].title }}</h2>
+                        </v-row>
                     </v-card-title>
                     <div v-if="cardIndex != -1">
                         <v-divider></v-divider> 
@@ -142,9 +146,37 @@ export default {
                 'Front-end',
                 'Ilustrador',
                 'Game Designer',
-                'Trabalho de Faculdade'
+                'Trabalho de Faculdade',
+                'Estágio'
             ],
             projectCards: [ 
+                {   
+                    title: 'MIDE - Enigma dos Bilhetes',
+                    shortTitle: 'Enigma dos Bilhetes',
+                    tags: ['Sistema','Jogo','Estágio'],
+                    description: 'O Enigma dos Bilhetes é um recurso digital desenvolvido para o projeto de '
+                    + 'Pesquisa e Desenvolvimento de Recursos Educacionais Digitais (RED) para conteúdos de '
+                    + 'Língua Portuguesa e Matemática nos anos iniciais do ensino fundamental (Projeto MIDE). ',
+                    functions: ['Desenvolvedor','Front-end'],
+                    img: require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_image.png'),
+                    iconsTools: [
+                        require('@/assets/interests-icons/vue.png')
+                    ],
+                    color: 'blue lighten-1',
+                    carouselImages: [
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_01.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_02.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_03.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_04.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_05.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_06.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_07.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_08.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_09.png'),
+                        require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_10.png')
+                    ],
+                    link: 'https://mide-enigma-dos-bilhetes.netlify.com/#/'
+                },
                 {   
                     title: 'Egipcia Ecommerce',
                     shortTitle: 'Egipcia',
@@ -155,7 +187,7 @@ export default {
                         + 'o cliente. Utiliza cookies para realizar a função do carrinho de compras, podendo ser usado '
                         + 'mesmo sem estar com uma sessão de usuário. Esse sistema foi desenvolvido para o trabalho final da '
                         + 'disciplina de Programação Web I do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.',
-                    functions: ['Desenvolvedor','Back-end'],
+                    functions: ['Desenvolvedor','Front-end','Back-end'],
                     img: require('@/assets/projects-images/egipcia/egipcia_image.png'),
                     iconsTools: [
                         require('@/assets/interests-icons/java.png')
