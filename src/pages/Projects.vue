@@ -141,6 +141,7 @@ export default {
             tags: [
                 'Jogo',
                 'Sistema',
+                'Infográfico',
                 'Desenvolvedor',
                 'Back-end',
                 'Front-end',
@@ -149,7 +150,32 @@ export default {
                 'Trabalho de Faculdade',
                 'Estágio'
             ],
-            projectCards: [ 
+            projectCards: [
+                {   
+                    title: 'Feminicídio no Nordeste - Infográfico Interativo',
+                    shortTitle: 'Feminicídio no Nordeste',
+                    tags: ['Sistema','Infográfico','Trabalho de Faculdade'],
+                    description: 'Um infográfico interativo que mostra dados sobre o feminicídio na região nordeste no período de  '
+                    + '2007 até 2017. A fonte dos dados é o Atlas da Violência 2019. Esse infográfico interativo foi desenvolvido para o trabalho final da '
+                    + 'disciplina de Comunicação Visual 2 do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.',
+                    functions: ['Desenvolvedor','Front-end'],
+                    img: require('@/assets/projects-images/info-feminicidio/info_feminicidio_image.png'),
+                    iconsTools: [
+                        require('@/assets/interests-icons/vue.png')
+                    ],
+                    carouselImages: [
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_01.png'),
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_02.png'),
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_03.png'),
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_04.png'),
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_05.png'),
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_06.png'),
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_07.png'),
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_08.png'),
+                        require('@/assets/projects-images/info-feminicidio/info_feminicidio_09.png'),
+                    ],
+                    link: 'https://infografico-cv2-406783.netlify.com/'
+                }, 
                 {   
                     title: 'MIDE - Enigma dos Bilhetes',
                     shortTitle: 'Enigma dos Bilhetes',
@@ -162,7 +188,6 @@ export default {
                     iconsTools: [
                         require('@/assets/interests-icons/vue.png')
                     ],
-                    color: 'blue lighten-1',
                     carouselImages: [
                         require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_01.png'),
                         require('@/assets/projects-images/enigma-dos-bilhetes/enigma_dos_bilhetes_02.png'),
@@ -178,10 +203,35 @@ export default {
                     link: 'https://mide-enigma-dos-bilhetes.netlify.com/#/'
                 },
                 {   
+                    title: 'Luz do Saber - Fundamental',
+                    shortTitle: 'Luz do Saber',
+                    tags: ['Sistema','Jogo','Estágio'],
+                    description: 'Software para alfabetização de crianças. Atividades digitais que contribuem para alfabetização infantil. '
+                    + 'O projeto trata-se de uma nova versão do antigo software Luz do Saber, feito em Flash. Agora criado no framework Vue.',
+                    functions: ['Desenvolvedor','Front-end'],
+                    img: require('@/assets/projects-images/luz-do-saber/luz_do_saber_image.png'),
+                    iconsTools: [
+                        require('@/assets/interests-icons/vue.png')
+                    ],
+                    carouselImages: [
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_01.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_02.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_03.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_04.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_05.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_06.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_07.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_08.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_09.png'),
+                        require('@/assets/projects-images/luz-do-saber/luz_do_saber_10.png')
+                    ],
+                    link: 'http://luz-do-saber-staging.herokuapp.com/'
+                },
+                {   
                     title: 'Egipcia Ecommerce',
                     shortTitle: 'Egipcia',
                     tags: ['Sistema','Trabalho de Faculdade'],
-                    description: 'Esse sistema gerencia o comércio digital fictícia Egipcia. Com o uso de JSPs e Servlets, '
+                    description: 'Esse sistema gerencia o comércio digital fictício Egipcia. Com o uso de JSPs e Servlets, '
                         + 'o Ecommerce Egipcia realiza operações de cadastro, listagem, filtragem, alteração e exclusão de '
                         + 'produtos, categorias, compras e clientes para o administrador, e a realização de compras para '
                         + 'o cliente. Utiliza cookies para realizar a função do carrinho de compras, podendo ser usado '
@@ -192,7 +242,6 @@ export default {
                     iconsTools: [
                         require('@/assets/interests-icons/java.png')
                     ],
-                    color: 'blue lighten-1',
                     carouselImages: [
                         require('@/assets/projects-images/egipcia/egipcia_01.png'),
                         require('@/assets/projects-images/egipcia/egipcia_02.png'),
@@ -217,7 +266,6 @@ export default {
                         require('@/assets/interests-icons/angular.png'),
                         require('@/assets/interests-icons/firebase.png')
                     ],
-                    color: 'blue lighten-1',
                     carouselImages: [],
                     link: 'https://github.com/eduregis/multimeios'
                 },
@@ -239,7 +287,6 @@ export default {
                     iconsTools: [
                         require('@/assets/interests-icons/javascript.png')
                     ],
-                    color: 'orange darken-2',
                     carouselImages: [
                         require('@/assets/projects-images/beep/beep_01.png'),
                         require('@/assets/projects-images/beep/beep_02.png'),
@@ -253,7 +300,7 @@ export default {
                     shortTitle: 'Breakout Remake',
                     tags: ['Jogo','Trabalho de Faculdade'],
                     description: 'Um remake do clássico jogo de atari Breakout. Feito com o framework Processing '
-                        + 'Esse jogo foi desenvolvido para o trabalho final da disciplina de Matem´tica aplicada à Multimídia I'
+                        + 'Esse jogo foi desenvolvido para o trabalho final da disciplina de Matemática aplicada à Multimídia I'
                         + ' do Curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.'
                         ,
                     functions: ['Desenvolvedor','Ilustrador'],
@@ -261,7 +308,6 @@ export default {
                     iconsTools: [
                         require('@/assets/interests-icons/java.png')
                     ],
-                    color: 'pink darken-1',
                     carouselImages: [
                         require('@/assets/projects-images/breakout_remake/breakout_remake_01.png'),
                         require('@/assets/projects-images/breakout_remake/breakout_remake_02.png'),
@@ -289,7 +335,6 @@ export default {
                     iconsTools: [
                         require('@/assets/interests-icons/gamemaker.png')
                     ],
-                    color: 'light-green darken-1',
                     carouselImages: [
                         require('@/assets/projects-images/rgb/planetargb_01.png'),
                         require('@/assets/projects-images/rgb/planetargb_02.png'),
@@ -359,26 +404,7 @@ export default {
     .project-card-img{
         width: 100%;
         z-index: 1;
-    }
-    /* .project-card-title{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-        opacity: 0;
-        display: flex;
-        padding: 10px;
-        transition: opacity .5s ease-out;
-        background-color: rgba(0,0,0,0.5);
-    }
-    .project-card-title:hover{
-        opacity: 1;
-    }
-    .project-card-img{
-        position: absolute;
-        width: 100%;
-        z-index: 1;
-    } */    
+    }    
     .second-column{
         margin-top: -8px;
     }

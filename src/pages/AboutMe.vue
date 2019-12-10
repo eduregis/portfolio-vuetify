@@ -22,22 +22,7 @@
       <br><br><br> 
       <v-layout text-xs-center justify-center>        
         <v-flex xs4>
-          <v-divider></v-divider>
-          <br><br><br>
-          <h2 style="color: #fdd855">Redes Sociais</h2>
-          <br>
-          <v-layout>
-            <v-img 
-            v-for="(icon, index) in socialIcons" 
-            :key="index"           
-            :src="icon"
-            class="my-3"
-            contain
-            height="50"
-            ></v-img>
-          </v-layout>
-          <br><br><br>
-          <v-divider></v-divider>          
+          <v-divider></v-divider>                
         </v-flex>    
       </v-layout>      
       <br><br><br>            
